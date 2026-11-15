@@ -99,11 +99,12 @@ while True:
         print("")
         print("")
         print("")
+        print(pyfiglet.figlet_format("Blackjack!"))
         print("")
         print("")
         print("")
         print("")
-        print("")
+        print
 
     elif game_choice == "blackjack":
         print("Starting blackjack...")
@@ -171,7 +172,7 @@ while True:
 
         dealer_complete_points = card_values[dealer1] + card_values[dealer2]
 
-        print("Drumroll please! Your first card is " + card1 + " and your second is " + card2 + ". Obviously you cannot see the dealers cards though! Ha, Ha.               Just kidding, in Blackjack, you are entitled to see one of the dealer's cards. One of their cards are the " + dealer1 + " which is worth " + str(dealer_visible_points) + " points.")
+        print("Drumroll please! Your first card is " + card1 + " and your second is " + card2 + ". Obviously you cannot see the dealers cards though! Ha, Ha. Just kidding, in Blackjack, you are entitled to see one of the dealer's cards. One of their cards are the " + dealer1 + " which is worth " + str(dealer_visible_points) + " points.")
         print("")
         input("Press enter to show how many points you have and progress: ")
         cards = list(card_values.keys())
