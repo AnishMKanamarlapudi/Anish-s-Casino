@@ -85,12 +85,21 @@ while True:
     print("Current Balance: " + str(money) + "$ dollars.")
     print("")
     print("")
-    print("")
-    print("Owner: Just remember, if you are winning, keep on going, and if you are losing, keep trying, never give up.")
+    print("") 
+#*
+    print("Random person that you just met: Just remember, if you are winning, keep on going, and if you are losing, keep trying, never give up.")
+    if money < 1:
+        print("")
+        print("You ran out of money. Thus, you lost. Restarting the game resets your money back to the default of 1000$")
+        sys.exit()
 
-    game_choice = input("Your options are slot-machine, blackjack and roulette: ")
+    elif money > 10000:
+        print("")
+        print("I'm really proud of you. It hurts me to do this but I have to tell you to leave. You've already made us lose enough money and earned yourself a nice fortune. Your efforts won't be in vain though, you now have the owner's number: +1 609 451 6887, and the ***** ******** which is 'e4F98Chjltonp67'. I don't wanna see you again! In a good way of course. ")
 
-    if game_choice == "slot-machine":
+    game_choice = input("Your options are (s)lot-machine, (b)lackjack and (r)oulette. Also (a)dmin menu: ")
+
+    if game_choice == "s":
         print("Starting slot-machine...")
         print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
         print("")
@@ -99,14 +108,66 @@ while True:
         print("")
         print("")
         print("")
-        print(pyfiglet.figlet_format("Blackjack!"))
+        print(pyfiglet.figlet_format("Slot Machine!"))
         print("")
         print("")
         print("")
         print("")
-        print
+        #*
+        while True:
+            try:
+                user_slots_cash = float(input("How much money would you like to bet on this game? You currently have " + str(money) + " dollars right now: "))
 
-    elif game_choice == "blackjack":
+                if 1 <= user_slots_cash <= money:
+                    break
+
+                elif user_slots_cash > money:
+                    print("You cannot bet more than the amount of money you have.")
+
+                else:
+                    print("You cannot bet less than 1 dollar, you have to bet at least 1 dollar(s)")
+
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+        
+        input("Welcome to Slots. Once you are ready, just press ready. If you get a 777, you get triple the money you bet on this game back into your account. If a 7 ever appears in the 3 sots, you get 50% your bet added into your account. If all of the numbers are equal(execpt for 777), then you get 30 percent of your bet back: ")
+
+        slots_1 = random.choice[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        slots_2 = random.choice[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        slots_3 = random.choice[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        print("You got the score: [" + slots_1 + "] [" + slots_2 + "] [" + slots_3 + "]")
+
+        if slots_1 == 7 and slots_2 == 7 and slots_3 == 7:
+            print("")
+            print("Yay, you won and got a 777. You get triple the cash you originally bet transferred into your account. Great job!")
+            print("")
+            triple7_win = (3 * user_slots_cash)
+            money += triple7_win
+
+            
+        elif slots_1 == 7 or slots_2 == 7 or slots_3 == 7:
+            print("You got at least 1 '7', meaning that 50 percent of your bet will go into your account.")
+            print("")
+            single7_win = (0.5 * user_slots_cash)
+            money += single7_win
+
+        elif slots_1 == slots_2 == slots_3:
+            print("All of the numbers are equal, execpt for '777', meaning that 30 percent of your bet will be sent to your account! Great luck! Come back next time! ")
+            print("")
+            All_equal_win = (0.3 * user_slots_cash)
+            money += All_equal_win
+
+
+            input("Press enter to go back home. Hope you return: ")
+
+
+
+
+        #______________________________________________________________________________________________________________________________________________________________________________
+        
+
+    elif game_choice == "b":
         print("Starting blackjack...")
         print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
         print("")
@@ -248,7 +309,7 @@ while True:
 
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    elif game_choice == "roulette":
+    elif game_choice == "r":
         print("Starting roulette...")
         print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
         print(" ")
@@ -304,5 +365,72 @@ while True:
         
         input("Press enter to go back home: ")
 
+    
+    elif game_choice == "a":
+        print("Starting Admin menu...")
+        print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+        print("")
+        admin_code_input = input("Enter the admin code here: ")
+
+    if admin_code_input != "e4F98Chjltonp67":
+        print("")
+        print("Wrong! Did you really expect me to not code in the password thing wrong. Just leave! You made a mistake just being here.")
+        print("")
+        sys.exit()
+
+    print("Wow you got it correct, im shocked to say the least. You are allowed to continue.")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("")
+    print(pyfiglet.figlet_format("Admin Menu!"))
+    print("")
+    print("")        
+    print("Welcome Anish; or whoever was able to get more than 10000 dollars in this game")
+    admin_input = input("What would you like to do. You can either add or subtract money from your current balance. Type (a)dd or (s)ubtract: ")
+
+    if admin_input == "a":
+                print("")
+                print("You have chosen to add money to your account.")
+                print("")
+                admin_add = int(input("Enter here how much money you want to add to the global money variable: "))
+                money += admin_add
+                print("")
+                print("Completed, finished adding money to your account!")
+                print("")
+        
+    if admin_input == "s":
+                print("")
+                print("You have chosen to subtract money from your account.")
+                print("")
+                admin_subtract = int(input("Enter here how much money you want to subtract from the global money variable: "))
+                money -= admin_subtract
+                print("")
+                print("Completed, finished adding money to your account!")
+                print("")
+                
+
+
+    input("Press enter to exit: ")
+
 else:
-    print("Type the name of the game exactly as it is shown!")
+    print("Type the name of the option exactly as it is shown!")
+
+
+
+
+# Credits:
+
+# Anish Kanamrlapudi
+# His computer
+# His keyboard
+# His Mouse
+# His internet provider: Xfinity
+# His soul/brain
+# Wait a minute: Why are you in my code? Lokey you are probably trying to check for AI or find the admin code.
+# Goodbye
+# Bye
+# B
+# ! 
