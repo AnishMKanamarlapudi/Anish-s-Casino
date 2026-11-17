@@ -16,7 +16,7 @@ def show_spinner(duration_seconds=5):
             sys.stdout.write("\b")
             i +=1
 
-print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
+print("‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾")
 print(" ")
 print(" ")
 print(" ")
@@ -130,36 +130,41 @@ while True:
             except ValueError:
                 print("Invalid input. Please enter a number.")
         
+        print("")
         input("Welcome to Slots. Once you are ready, just press ready. If you get a 777, you get triple the money you bet on this game back into your account. If a 7 ever appears in the 3 sots, you get 50% your bet added into your account. If all of the numbers are equal(execpt for 777), then you get 30 percent of your bet back: ")
 
-        slots_1 = random.choice[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        slots_2 = random.choice[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        slots_3 = random.choice[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        slots_1 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        slots_2 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        slots_3 = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
-        print("You got the score: [" + slots_1 + "] [" + slots_2 + "] [" + slots_3 + "]")
+        print("")
+        print("You got the score: [" + str(slots_1) + "] [" + str(slots_2) + "] [" + str(slots_3) + "]")
+        print("")
 
         if slots_1 == 7 and slots_2 == 7 and slots_3 == 7:
-            print("")
             print("Yay, you won and got a 777. You get triple the cash you originally bet transferred into your account. Great job!")
             print("")
             triple7_win = (3 * user_slots_cash)
             money += triple7_win
-
+            print("You now have " + str(money) + " dollars.")
+            
             
         elif slots_1 == 7 or slots_2 == 7 or slots_3 == 7:
             print("You got at least 1 '7', meaning that 50 percent of your bet will go into your account.")
             print("")
             single7_win = (0.5 * user_slots_cash)
             money += single7_win
-
+            print("You now have " + str(money) + " dollars.")
+            
         elif slots_1 == slots_2 == slots_3:
             print("All of the numbers are equal, execpt for '777', meaning that 30 percent of your bet will be sent to your account! Great luck! Come back next time! ")
             print("")
             All_equal_win = (0.3 * user_slots_cash)
             money += All_equal_win
+            print("You now have " + str(money) + " dollars.")
+            
 
-
-            input("Press enter to go back home. Hope you return: ")
+        input("Press enter to go back home. Hope you return: ")
 
 
 
@@ -372,51 +377,51 @@ while True:
         print("")
         admin_code_input = input("Enter the admin code here: ")
 
-    if admin_code_input != "e4F98Chjltonp67":
-        print("")
-        print("Wrong! Did you really expect me to not code in the password thing wrong. Just leave! You made a mistake just being here.")
-        print("")
-        sys.exit()
+        if admin_code_input != "e4F98Chjltonp67":
+            print("")
+            print("Wrong! Did you really expect me to not code in the password thing wrong. Just leave! You made a mistake just being here.")
+            print("")
+            sys.exit()
 
-    print("Wow you got it correct, im shocked to say the least. You are allowed to continue.")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("")
-    print(pyfiglet.figlet_format("Admin Menu!"))
-    print("")
-    print("")        
-    print("Welcome Anish; or whoever was able to get more than 10000 dollars in this game")
-    admin_input = input("What would you like to do. You can either add or subtract money from your current balance. Type (a)dd or (s)ubtract: ")
+        print("Wow you got it correct, im shocked to say the least. You are allowed to continue.")
+        print("")
+        print("")
+        print("")
+        print("")
+        print("")
+        print("")
+        print(pyfiglet.figlet_format("Admin Menu!"))
+        print("")
+        print("")        
+        print("Welcome Anish; or whoever was able to get more than 10000 dollars in this game")
+        admin_input = input("What would you like to do. You can either add or subtract money from your current balance. Type (a)dd or (s)ubtract: ")
 
-    if admin_input == "a":
-                print("")
-                print("You have chosen to add money to your account.")
-                print("")
-                admin_add = int(input("Enter here how much money you want to add to the global money variable: "))
-                money += admin_add
-                print("")
-                print("Completed, finished adding money to your account!")
-                print("")
+        if admin_input == "a":
+            print("")
+            print("You have chosen to add money to your account.")
+            print("")
+            admin_add = int(input("Enter here how much money you want to add to the global money variable: "))
+            money += admin_add
+            print("")
+            print("Completed, finished adding money to your account!")
+            print("")
         
-    if admin_input == "s":
-                print("")
-                print("You have chosen to subtract money from your account.")
-                print("")
-                admin_subtract = int(input("Enter here how much money you want to subtract from the global money variable: "))
-                money -= admin_subtract
-                print("")
-                print("Completed, finished adding money to your account!")
-                print("")
+        if admin_input == "s":
+            print("")
+            print("You have chosen to subtract money from your account.")
+            print("")
+            admin_subtract = int(input("Enter here how much money you want to subtract from the global money variable: "))
+            money -= admin_subtract
+            print("")
+            print("Completed, finished adding money to your account!")
+            print("")
                 
 
 
-    input("Press enter to exit: ")
+        input("Press enter to exit: ")
 
-else:
-    print("Type the name of the option exactly as it is shown!")
+    else:
+        print("Type the name of the option exactly as it is shown!")
 
 
 
@@ -433,4 +438,4 @@ else:
 # Goodbye
 # Bye
 # B
-# ! 
+# !
