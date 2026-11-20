@@ -1,6 +1,5 @@
 import random
 import sys
-import pyfiglet
 import time
 
 def show_spinner(duration_seconds=5):
@@ -28,7 +27,7 @@ print(" ")
 print("")
 print("")
 
-print(pyfiglet.figlet_format("Anish's  Casino"))
+print("Anish's  Casino")
 print("𝕐𝕠𝕦 𝕔𝕒𝕟 𝕖𝕚𝕥𝕙𝕖𝕣 𝕞 𝕒𝕜𝕖 𝕚𝕥 𝕒𝕝𝕝 𝕠𝕣 𝕝𝕠𝕤𝕖 𝕚𝕥 𝕒𝕝𝕝!")
 #La peace bros
 print(" ")
@@ -77,7 +76,7 @@ while True:
     print("")
     print("")
     print("")
-    print(pyfiglet.figlet_format("Home  Screen"))
+    print("Home  Screen")
     print(" ")
     print("Welcome " + username + ". Have a great time!")
     print("")
@@ -108,7 +107,7 @@ while True:
         print("")
         print("")
         print("")
-        print(pyfiglet.figlet_format("Slot Machine!"))
+        print("Slot Machine!")
         print("")
         print("")
         print("")
@@ -179,7 +178,7 @@ while True:
         print("")
         print("")
         print("")
-        print(pyfiglet.figlet_format("Blackjack!"))
+        print("Blackjack!")
         print("")
         print("")
         print("")
@@ -322,7 +321,7 @@ while True:
         print("")
         print("")
         print("")
-        print(pyfiglet.figlet_format("Roulette!"))
+        print("Roulette!")
         print("")
         print("")
         print("Roulette Table")
@@ -390,7 +389,7 @@ while True:
         print("")
         print("")
         print("")
-        print(pyfiglet.figlet_format("Admin Menu!"))
+        print("Admin Menu!")
         print("")
         print("")        
         print("Welcome Anish; or whoever was able to get more than 10000 dollars in this game")
